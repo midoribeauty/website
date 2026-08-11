@@ -1,21 +1,21 @@
 ---
 // Approved English Gallery page port from Notion: EN — Gallery Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box';
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <SeoHead
-    lang="en"
-    title="Gallery · Midori Beauty | Lash, nail & foot care studio in Tikkurila"
-    description="A visual glimpse into Midori Beauty's private lash, nail and foot care studio in Tikkurila, Vantaa."
-    path="/en/gallery/"
-  />
-</head>
-<body class="gallery-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box">
+<BaseLayout
+  lang="en"
+  title="Gallery · Midori Beauty | Lash, nail & foot care studio in Tikkurila"
+  description="A visual glimpse into Midori Beauty's private lash, nail and foot care studio in Tikkurila, Vantaa."
+  path="/en/gallery/"
+  bodyClass="gallery-page"
+  revealSelector={revealSelector}
+  includeGalleryScript={true}
+>
   <Navbar lang="en" current="gallery" />
   <main>
     <section class="page-header" id="gallery-top"><div class="container"><div class="label">Gallery</div><h1 class="section-title serif">Results, details, and quiet studio moments.</h1><p class="lead">A visual mood board for Midori Beauty — soft finishes, clean details, and the calm feeling of time reserved just for you.</p></div></section>
@@ -25,8 +25,4 @@ import Footer from '../../components/Footer.astro';
   </main>
   <div class="lightbox" id="lightbox"><button class="lightbox-close" type="button" aria-label="Close">✕</button><button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button><div class="lightbox-img" id="lightboxImg"></div><button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button></div>
   <Footer lang="en" />
-  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-  <script src="/assets/scripts/gallery.js" defer></script>
-</body>
-</html>
+</BaseLayout>

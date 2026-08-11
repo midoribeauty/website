@@ -1,21 +1,21 @@
 ---
 // Approved Finnish Gallery page port from Notion: FI — Gallery Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box';
 ---
 
-<!doctype html>
-<html lang="fi">
-<head>
-  <SeoHead
-    lang="fi"
-    title="Galleria · Midori Beauty | Ripsi-, kynsi- ja jalkojenhoitostudio Tikkurilassa"
-    description="Visuaalinen katsaus Midori Beautyn yksityiseen ripsi-, kynsi- ja jalkojenhoitostudioon Tikkurilassa, Vantaalla."
-    path="/fi/gallery/"
-  />
-</head>
-<body class="gallery-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box">
+<BaseLayout
+  lang="fi"
+  title="Galleria · Midori Beauty | Ripsi-, kynsi- ja jalkojenhoitostudio Tikkurilassa"
+  description="Visuaalinen katsaus Midori Beautyn yksityiseen ripsi-, kynsi- ja jalkojenhoitostudioon Tikkurilassa, Vantaalla."
+  path="/fi/gallery/"
+  bodyClass="gallery-page"
+  revealSelector={revealSelector}
+  includeGalleryScript={true}
+>
   <Navbar lang="fi" current="gallery" />
   <main>
     <section class="page-header" id="gallery-top"><div class="container"><div class="label">Galleria</div><h1 class="section-title serif">Lopputuloksia, yksityiskohtia ja rauhallisia studiohetkiä.</h1><p class="lead">Visuaalinen moodboard Midori Beautylle — pehmeitä viimeistelyjä, siistejä yksityiskohtia ja rauhallinen hetki, joka on varattu vain sinulle.</p></div></section>
@@ -25,8 +25,4 @@ import Footer from '../../components/Footer.astro';
   </main>
   <div class="lightbox" id="lightbox"><button class="lightbox-close" type="button" aria-label="Sulje">✕</button><button class="lightbox-nav lightbox-prev" type="button" aria-label="Edellinen kuva">‹</button><div class="lightbox-img" id="lightboxImg"></div><button class="lightbox-nav lightbox-next" type="button" aria-label="Seuraava kuva">›</button></div>
   <Footer lang="fi" />
-  <button class="back-to-top" type="button" aria-label="Takaisin alkuun">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-  <script src="/assets/scripts/gallery.js" defer></script>
-</body>
-</html>
+</BaseLayout>
