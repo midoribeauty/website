@@ -1,5 +1,6 @@
 ---
 // Approved Finnish homepage port from Notion: FI — Main Homepage — index.html
+import SeoHead from '../../components/SeoHead.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
@@ -7,12 +8,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Midori Beauty · Kotistudio | Ripsienpidennykset, kynnet & jalkaspa</title>
-  <meta name="description" content="Midori Beauty on yksityinen ripsien, kynsien ja jalkojenhoidon kotistudio Tikkurilassa, Vantaalla." />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/styles/site.css" />
+  <SeoHead
+    lang="fi"
+    title="Midori Beauty · Kotistudio | Ripsienpidennykset, kynnet & jalkaspa"
+    description="Midori Beauty on yksityinen ripsien, kynsien ja jalkojenhoidon kotistudio Tikkurilassa, Vantaalla."
+    path="/fi/"
+  />
 </head>
 <body data-reveal-selector=".intro .intro-grid,.section-head,.service,.gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.reviews .label,.reviews .section-title,.review,.practical .label,.practical .section-title,.practical .lead,.info-card,.map-placeholder,.cta-box">
   <Navbar lang="fi" current="home" />

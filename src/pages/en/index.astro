@@ -1,5 +1,6 @@
 ---
 // Approved English homepage port from Notion: EN — Main Homepage — index.html
+import SeoHead from '../../components/SeoHead.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
@@ -7,12 +8,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Midori Beauty · Home Studio | Eyelash extensions, nails & foot spa</title>
-  <meta name="description" content="Midori Beauty is a private lash, nail and foot care home studio in Tikkurila, Vantaa." />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/styles/site.css" />
+  <SeoHead
+    lang="en"
+    title="Midori Beauty · Home Studio | Eyelash extensions, nails & foot spa"
+    description="Midori Beauty is a private lash, nail and foot care home studio in Tikkurila, Vantaa."
+    path="/en/"
+  />
 </head>
 <body data-reveal-selector=".intro .intro-grid,.section-head,.service,.gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.reviews .label,.reviews .section-title,.review,.practical .label,.practical .section-title,.practical .lead,.info-card,.map-placeholder,.cta-box">
   <Navbar lang="en" current="home" />
