@@ -1,5 +1,6 @@
 ---
 // Approved English Gallery page port from Notion: EN — Gallery Page — index.html
+import SeoHead from '../../components/SeoHead.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
@@ -7,12 +8,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Gallery · Midori Beauty | Lash, nail & foot care studio in Tikkurila</title>
-  <meta name="description" content="A visual glimpse into Midori Beauty's private lash, nail and foot care studio in Tikkurila, Vantaa." />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/styles/site.css" />
+  <SeoHead
+    lang="en"
+    title="Gallery · Midori Beauty | Lash, nail & foot care studio in Tikkurila"
+    description="A visual glimpse into Midori Beauty's private lash, nail and foot care studio in Tikkurila, Vantaa."
+    path="/en/gallery/"
+  />
 </head>
 <body class="gallery-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box">
   <Navbar lang="en" current="gallery" />
