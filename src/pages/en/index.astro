@@ -1,21 +1,19 @@
 ---
 // Approved English homepage port from Notion: EN — Main Homepage — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.intro .intro-grid,.section-head,.service,.gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.reviews .label,.reviews .section-title,.review,.practical .label,.practical .section-title,.practical .lead,.info-card,.map-placeholder,.cta-box';
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <SeoHead
-    lang="en"
-    title="Midori Beauty · Home Studio | Eyelash extensions, nails & foot spa"
-    description="Midori Beauty is a private lash, nail and foot care home studio in Tikkurila, Vantaa."
-    path="/en/"
-  />
-</head>
-<body data-reveal-selector=".intro .intro-grid,.section-head,.service,.gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.reviews .label,.reviews .section-title,.review,.practical .label,.practical .section-title,.practical .lead,.info-card,.map-placeholder,.cta-box">
+<BaseLayout
+  lang="en"
+  title="Midori Beauty · Home Studio | Eyelash extensions, nails & foot spa"
+  description="Midori Beauty is a private lash, nail and foot care home studio in Tikkurila, Vantaa."
+  path="/en/"
+  revealSelector={revealSelector}
+>
   <Navbar lang="en" current="home" />
   <main>
     <section class="hero"><div class="hero-pattern" aria-hidden="true"></div><svg class="botanical" viewBox="0 0 220 220" fill="none" aria-hidden="true"><path d="M112 186C106 133 109 90 128 43" stroke-width="1.1"/><path d="M126 76C146 58 169 54 184 65C171 87 150 98 126 94C126 88 126 82 126 76Z" stroke-width="1.1"/><path d="M116 112C96 94 72 90 56 103C70 125 93 135 117 130C117 124 116 118 116 112Z" stroke-width="1.1" opacity=".72"/></svg><div class="hero-content"><div class="eyebrow">Tikkurila · Vantaa</div><h1 class="serif">Soft beauty, <em>at your pace</em>.</h1><p>Midori Beauty is a private home studio for lashes, nails and foot care — calm, personal, and carefully finished, one client at a time.</p><div class="actions"><a class="btn primary" href="./booking/">Book now</a><a class="btn ghost" href="#services">Services</a></div><div class="chips"><span class="chip"><strong>Private studio</strong>One client at a time</span><span class="chip"><strong>Minimal & refined</strong>Soft, natural aesthetic</span><span class="chip"><strong>Easy booking</strong>Times and prices online</span></div></div></section>
@@ -28,7 +26,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta" id="booking"><div class="container"><div class="cta-box"><div><h2 class="serif">Ready for a calmer beauty moment?</h2><p>Book your private appointment easily online via Midori Beauty’s booking page.</p></div><div class="actions"><a class="btn primary" href="./booking/">Book now</a><a class="btn ghost" href="https://varaa.timma.fi/midoribeauty" target="_blank" rel="noreferrer">Book on Timma</a></div></div></div></section>
   </main>
   <Footer lang="en" />
-  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>
