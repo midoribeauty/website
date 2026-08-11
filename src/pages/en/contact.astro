@@ -1,21 +1,20 @@
 ---
 // Approved English Contact page port from Notion: EN — Contact Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.section-head,.info-card,.why-art,.why .label,.why .section-title,.point,.contact-social-card,.intro-grid,.map-placeholder,.cta-box';
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <SeoHead
-    lang="en"
-    title="Contact · Midori Beauty | Private beauty studio in Tikkurila"
-    description="Book your private lash, nail or foot care appointment at Midori Beauty in Tikkurila, Vantaa."
-    path="/en/contact/"
-  />
-</head>
-<body class="contact-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.section-head,.info-card,.why-art,.why .label,.why .section-title,.point,.contact-social-card,.intro-grid,.map-placeholder,.cta-box">
+<BaseLayout
+  lang="en"
+  title="Contact · Midori Beauty | Private beauty studio in Tikkurila"
+  description="Book your private lash, nail or foot care appointment at Midori Beauty in Tikkurila, Vantaa."
+  path="/en/contact/"
+  bodyClass="contact-page"
+  revealSelector={revealSelector}
+>
   <Navbar lang="en" current="contact" />
   <main>
     <section class="page-header"><div class="container"><div class="label">Contact</div><h1 class="section-title serif">Contact &amp; visit.</h1><p class="lead">Everything you need to plan your appointment at Midori Beauty — address, contact details, opening hours and booking links in one place.</p></div></section>
@@ -26,7 +25,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Ready for your private studio moment?</h2><p>Choose a service, find a suitable time and continue to the booking page.</p></div><div class="actions"><a class="btn primary" href="../booking/">Book now</a><a class="btn ghost" href="../prices/">View prices</a></div></div></div></section>
   </main>
   <Footer lang="en" />
-  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>
