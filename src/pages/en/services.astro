@@ -3,15 +3,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
 
 const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box';
+const meta = seo.en.services;
 ---
 
 <BaseLayout
   lang="en"
-  title="Services · Midori Beauty | Lash, nail &amp; foot care in Tikkurila"
-  description="Explore lash, nail and foot care services at Midori Beauty — a private, calm home studio in Tikkurila, Vantaa. Pricing and available times are on the Prices page."
-  path="/en/services/"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
   bodyClass="services-page"
   revealSelector={revealSelector}
 >
