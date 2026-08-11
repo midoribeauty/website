@@ -3,15 +3,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
 
 const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box';
+const meta = seo.fi.gallery;
 ---
 
 <BaseLayout
   lang="fi"
-  title="Galleria · Midori Beauty | Ripsi-, kynsi- ja jalkojenhoitostudio Tikkurilassa"
-  description="Visuaalinen katsaus Midori Beautyn yksityiseen ripsi-, kynsi- ja jalkojenhoitostudioon Tikkurilassa, Vantaalla."
-  path="/fi/gallery/"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
   bodyClass="gallery-page"
   revealSelector={revealSelector}
   includeGalleryScript={true}
