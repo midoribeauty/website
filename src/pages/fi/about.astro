@@ -1,21 +1,20 @@
 ---
 // Approved Finnish About page port from Notion: FI — About Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.intro-grid,.intro-card,.section-head,.value-card,.about-gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.cta-box';
 ---
 
-<!doctype html>
-<html lang="fi">
-<head>
-  <SeoHead
-    lang="fi"
-    title="Esittely · Midori Beauty | Yksityinen ripsi-, kynsi- ja jalkahoitostudio"
-    description="Midori Beauty on yksityinen ripsien, kynsien ja jalkojenhoidon kotistudio Tikkurilassa, Vantaalla — rauhallinen, henkilökohtainen ja rakennettu yksi asiakas kerrallaan."
-    path="/fi/about/"
-  />
-</head>
-<body class="about-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.intro-grid,.intro-card,.section-head,.value-card,.about-gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.cta-box">
+<BaseLayout
+  lang="fi"
+  title="Esittely · Midori Beauty | Yksityinen ripsi-, kynsi- ja jalkahoitostudio"
+  description="Midori Beauty on yksityinen ripsien, kynsien ja jalkojenhoidon kotistudio Tikkurilassa, Vantaalla — rauhallinen, henkilökohtainen ja rakennettu yksi asiakas kerrallaan."
+  path="/fi/about/"
+  bodyClass="about-page"
+  revealSelector={revealSelector}
+>
   <Navbar lang="fi" current="about" />
   <main>
     <section class="page-header" id="about-top"><div class="container"><div class="label">Esittely</div><h1 class="section-title serif">Pieni studio ja rauhallisempi tapa tehdä työtä.</h1><p class="lead">Midori Beauty on pieni kotistudio Tikkurilassa, Vantaalla, asiakkaille jotka toivovat henkilökohtaisempaa kauneuskäyntiä. Jokainen aika tehdään saman tekijän toimesta, ensimmäisestä keskustelusta viimeiseen viimeistelyyn.</p></div></section>
@@ -26,7 +25,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta" id="booking-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Kiinnostaako, miltä rauhallisempi kauneuskäynti tuntuu?</h2><p>Varaa yksityinen aikasi helposti verkossa Midori Beautyn ajanvaraussivulla.</p></div><div class="actions"><a class="btn primary" href="../booking/">Varaa aika</a><a class="btn ghost" href="../services/">Katso palvelut</a></div></div></div></section>
   </main>
   <Footer lang="fi" />
-  <button class="back-to-top" type="button" aria-label="Takaisin alkuun">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>
