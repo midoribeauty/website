@@ -3,15 +3,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
 
 const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.intro-grid,.intro-card,.section-head,.value-card,.about-gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.cta-box';
+const meta = seo.en.about;
 ---
 
 <BaseLayout
   lang="en"
-  title="About · Midori Beauty | Private lash, nail &amp; foot care home studio"
-  description="Midori Beauty is a private lash, nail and foot care home studio in Tikkurila, Vantaa — calm, personal, and built around one client at a time."
-  path="/en/about/"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
   bodyClass="about-page"
   revealSelector={revealSelector}
 >
