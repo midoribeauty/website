@@ -1,21 +1,20 @@
 ---
 // Approved English Prices page port from Notion: EN — Prices Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.price-section .label,.price-section .section-title,.price-section .lead,.price-highlight,.price-card,.price-callout,.cta-box';
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <SeoHead
-    lang="en"
-    title="Prices · Midori Beauty | Lash, nail &amp; foot care in Tikkurila"
-    description="An overview of lash, nail and foot care services at Midori Beauty in Tikkurila, Vantaa. Exact prices and availability are shown instantly in the booking calendar."
-    path="/en/prices/"
-  />
-</head>
-<body class="prices-page" data-reveal-selector=".price-section .label,.price-section .section-title,.price-section .lead,.price-highlight,.price-card,.price-callout,.cta-box">
+<BaseLayout
+  lang="en"
+  title="Prices · Midori Beauty | Lash, nail &amp; foot care in Tikkurila"
+  description="An overview of lash, nail and foot care services at Midori Beauty in Tikkurila, Vantaa. Exact prices and availability are shown instantly in the booking calendar."
+  path="/en/prices/"
+  bodyClass="prices-page"
+  revealSelector={revealSelector}
+>
   <Navbar lang="en" current="prices" />
   <main>
     <section class="price-section" id="prices-top"><div class="container"><div class="label">Prices</div><h1 class="section-title serif">Prices at a glance.</h1><p class="lead">A simple overview of current services and prices. Final availability, service details and booking are handled through Timma.</p>
@@ -30,7 +29,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta" id="prices-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Choose your service, then take your time.</h2><p>Reserve directly in Timma to see available appointments and complete your booking.</p></div><div class="actions"><a class="btn primary" href="https://varaa.timma.fi/midoribeauty" target="_blank" rel="noreferrer">Book now</a><a class="btn ghost" href="https://timma.fi/yritys/midori-beauty" target="_blank" rel="noreferrer">View on Timma</a></div></div></div></section>
   </main>
   <Footer lang="en" />
-  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>

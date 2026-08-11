@@ -1,21 +1,20 @@
 ---
 // Approved Finnish Prices page port from Notion: FI — Prices Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.price-section .label,.price-section .section-title,.price-section .lead,.price-highlight,.price-card,.price-callout,.cta-box';
 ---
 
-<!doctype html>
-<html lang="fi">
-<head>
-  <SeoHead
-    lang="fi"
-    title="Hinnat · Midori Beauty | Ripset, kynnet ja jalkojenhoito Tikkurilassa"
-    description="Yleiskatsaus Midori Beautyn ripsi-, kynsi- ja jalkojenhoitopalveluihin Tikkurilassa, Vantaalla. Tarkat hinnat ja vapaat ajat näet suoraan varauskalenterista."
-    path="/fi/prices/"
-  />
-</head>
-<body class="prices-page" data-reveal-selector=".price-section .label,.price-section .section-title,.price-section .lead,.price-highlight,.price-card,.price-callout,.cta-box">
+<BaseLayout
+  lang="fi"
+  title="Hinnat · Midori Beauty | Ripset, kynnet ja jalkojenhoito Tikkurilassa"
+  description="Yleiskatsaus Midori Beautyn ripsi-, kynsi- ja jalkojenhoitopalveluihin Tikkurilassa, Vantaalla. Tarkat hinnat ja vapaat ajat näet suoraan varauskalenterista."
+  path="/fi/prices/"
+  bodyClass="prices-page"
+  revealSelector={revealSelector}
+>
   <Navbar lang="fi" current="prices" />
   <main>
     <section class="price-section" id="prices-top"><div class="container"><div class="label">Hinnat</div><h1 class="section-title serif">Hinnat yhdellä silmäyksellä.</h1><p class="lead">Selkeä yleiskatsaus nykyisiin palveluihin ja hintoihin. Vapaat ajat, palvelun tiedot ja varaus hoidetaan Timmassa.</p>
@@ -30,7 +29,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta" id="prices-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Valitse palvelusi ja varaa oma hetkesi.</h2><p>Varaa suoraan Timmassa, jossa näet vapaat ajat ja viimeistelet varauksesi.</p></div><div class="actions"><a class="btn primary" href="https://varaa.timma.fi/midoribeauty" target="_blank" rel="noreferrer">Varaa aika</a><a class="btn ghost" href="https://timma.fi/yritys/midori-beauty" target="_blank" rel="noreferrer">Katso Timmassa</a></div></div></div></section>
   </main>
   <Footer lang="fi" />
-  <button class="back-to-top" type="button" aria-label="Takaisin alkuun">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>
