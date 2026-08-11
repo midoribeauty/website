@@ -3,15 +3,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
 
 const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.booking-hero-card,.booking-card,.booking-practical article,.booking-final';
+const meta = seo.en.booking;
 ---
 
 <BaseLayout
   lang="en"
-  title="Book now · Midori Beauty"
-  description="Book your Midori Beauty appointment online through Timma."
-  path="/en/booking/"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
   bodyClass="booking-page"
   revealSelector={revealSelector}
 >
