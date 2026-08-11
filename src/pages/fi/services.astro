@@ -14,7 +14,7 @@ import Footer from '../../components/Footer.astro';
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
   <link rel="stylesheet" href="/assets/styles/site.css" />
 </head>
-<body class="services-page">
+<body class="services-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box">
   <Navbar lang="fi" current="services" />
   <main>
     <section class="page-header" id="services-top"><div class="container"><div class="label">Palvelut</div><h1 class="section-title serif">Valitse hoito, joka sopii päivääsi.</h1><p class="lead">Ripset, kynnet ja jalkojenhoito on koottu tänne selkeästi vertailtavaksi. Jokaisella palvelulla on oma rytminsä ja tarkoituksensa, ja hinnat sekä vapaat ajat pysyvät ajan tasalla Hinnat-sivulla.</p></div></section>
@@ -26,6 +26,6 @@ import Footer from '../../components/Footer.astro';
   </main>
   <Footer lang="fi" />
   <button class="back-to-top" type="button" aria-label="Takaisin alkuun">↑</button>
-  <script>const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const menuButton=document.querySelector('.mobile-menu');const mobilePanel=document.getElementById('mobilePanel');if(menuButton&&mobilePanel){const closeMenu=()=>{mobilePanel.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false')};menuButton.addEventListener('click',(event)=>{event.stopPropagation();const open=mobilePanel.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',open?'true':'false')});mobilePanel.addEventListener('click',(event)=>event.stopPropagation());mobilePanel.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('click',closeMenu);document.addEventListener('touchstart',(event)=>{if(!mobilePanel.contains(event.target)&&!menuButton.contains(event.target))closeMenu()},{passive:true});document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeMenu()});}const topButton=document.querySelector('.back-to-top');window.addEventListener('scroll',()=>{if(window.scrollY>700){topButton.classList.add('is-visible')}else{topButton.classList.remove('is-visible')}});topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));const revealItems=document.querySelectorAll('.page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box');revealItems.forEach((el,index)=>{el.classList.add('reveal');if(index%3===1)el.classList.add('reveal-delay-1');if(index%3===2)el.classList.add('reveal-delay-2')});if('IntersectionObserver'in window){const revealObserver=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target)}})},{threshold:.16,rootMargin:'0px 0px -40px 0px'});revealItems.forEach(el=>revealObserver.observe(el))}else{revealItems.forEach(el=>el.classList.add('is-visible'))}</script>
+  <script src="/assets/scripts/site.js" defer></script>
 </body>
 </html>
