@@ -1,5 +1,6 @@
 ---
 // Approved Finnish Prices page port from Notion: FI — Prices Page — index.html
+import SeoHead from '../../components/SeoHead.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
@@ -7,12 +8,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Hinnat · Midori Beauty | Ripset, kynnet ja jalkojenhoito Tikkurilassa</title>
-  <meta name="description" content="Yleiskatsaus Midori Beautyn ripsi-, kynsi- ja jalkojenhoitopalveluihin Tikkurilassa, Vantaalla. Tarkat hinnat ja vapaat ajat näet suoraan varauskalenterista." />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/styles/site.css" />
+  <SeoHead
+    lang="fi"
+    title="Hinnat · Midori Beauty | Ripset, kynnet ja jalkojenhoito Tikkurilassa"
+    description="Yleiskatsaus Midori Beautyn ripsi-, kynsi- ja jalkojenhoitopalveluihin Tikkurilassa, Vantaalla. Tarkat hinnat ja vapaat ajat näet suoraan varauskalenterista."
+    path="/fi/prices/"
+  />
 </head>
 <body class="prices-page" data-reveal-selector=".price-section .label,.price-section .section-title,.price-section .lead,.price-highlight,.price-card,.price-callout,.cta-box">
   <Navbar lang="fi" current="prices" />
