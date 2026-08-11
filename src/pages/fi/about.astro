@@ -1,5 +1,6 @@
 ---
 // Approved Finnish About page port from Notion: FI — About Page — index.html
+import SeoHead from '../../components/SeoHead.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
@@ -7,12 +8,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="fi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Esittely · Midori Beauty | Yksityinen ripsi-, kynsi- ja jalkahoitostudio</title>
-  <meta name="description" content="Midori Beauty on yksityinen ripsien, kynsien ja jalkojenhoidon kotistudio Tikkurilassa, Vantaalla — rauhallinen, henkilökohtainen ja rakennettu yksi asiakas kerrallaan." />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/styles/site.css" />
+  <SeoHead
+    lang="fi"
+    title="Esittely · Midori Beauty | Yksityinen ripsi-, kynsi- ja jalkahoitostudio"
+    description="Midori Beauty on yksityinen ripsien, kynsien ja jalkojenhoidon kotistudio Tikkurilassa, Vantaalla — rauhallinen, henkilökohtainen ja rakennettu yksi asiakas kerrallaan."
+    path="/fi/about/"
+  />
 </head>
 <body class="about-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.intro-grid,.intro-card,.section-head,.value-card,.about-gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.cta-box">
   <Navbar lang="fi" current="about" />
