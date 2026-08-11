@@ -3,15 +3,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
 
 const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.section-head,.info-card,.why-art,.why .label,.why .section-title,.point,.contact-social-card,.intro-grid,.map-placeholder,.cta-box';
+const meta = seo.en.contact;
 ---
 
 <BaseLayout
   lang="en"
-  title="Contact · Midori Beauty | Private beauty studio in Tikkurila"
-  description="Book your private lash, nail or foot care appointment at Midori Beauty in Tikkurila, Vantaa."
-  path="/en/contact/"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
   bodyClass="contact-page"
   revealSelector={revealSelector}
 >
