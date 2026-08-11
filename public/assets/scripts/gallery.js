@@ -1,6 +1,7 @@
 // Gallery interactions — Midori Beauty
 // Extracted during Refactor Phase 3.
 // Handles gallery carousel, paginated thumbnails, lightbox, and lazy image discovery.
+// Runtime config can be provided by Gallery pages through window.MidoriGallery.
 
 (() => {
   const galleryTrack = document.getElementById('galleryTrack');
@@ -18,7 +19,7 @@
   if (!galleryTrack) return;
 
   const lang = document.documentElement.lang === 'fi' ? 'fi' : 'en';
-  const text = {
+  const fallbackText = {
     fi: {
       page: 'Sivu',
       loadingMore: 'Ladataan lisää',
@@ -35,12 +36,17 @@
     },
   }[lang];
 
-  const maxGalleryImages = 999;
-  const galleryPageSize = 20;
-  const galleryBatchSize = 40;
-  const initialCarouselCount = 12;
-  const galleryBasePath = '/assets/images/gallery/carousel/';
-  const galleryThumbPath = '/assets/images/gallery/thumbs/';
+  const runtimeConfig = window.MidoriGallery || {};
+  const text = runtimeConfig.text || fallbackText;
+
+  const maxGalleryImages = runtimeConfig.maxImages || 999;
+  const galleryPageSize = runtimeConfig.pageSize || 20;
+  const galleryBatchSize = runtimeConfig.batchSize || 40;
+  const initialCarouselCount = runtimeConfig.initialCarouselCount || 12;
+  const galleryBasePath = runtimeConfig.basePath || '/assets/images/gallery/carousel/';
+  const galleryThumbPath = runtimeConfig.thumbPath || '/assets/images/gallery/thumbs/';
+  const galleryFilePrefix = runtimeConfig.filePrefix || 'photo-';
+  const galleryFileExtension = runtimeConfig.fileExtension || '.jpg';
   const galleryCaption = (index) => `Photo ${String(index).padStart(3, '0')}`;
   const loadedGallery = [];
 
@@ -51,7 +57,7 @@
   let galleryReachedEnd = false;
 
   function galleryFileName(index) {
-    return `photo-${String(index).padStart(3, '0')}.jpg`;
+    return `${galleryFilePrefix}${String(index).padStart(3, '0')}${galleryFileExtension}`;
   }
 
   function galleryImage(index) {

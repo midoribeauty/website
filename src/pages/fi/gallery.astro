@@ -4,9 +4,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import { seo } from '../../content/seo';
+import { galleryRuntimeConfig } from '../../content/gallery';
 
 const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box';
 const meta = seo.fi.gallery;
+const galleryConfig = galleryRuntimeConfig('fi');
 ---
 
 <BaseLayout
@@ -25,6 +27,9 @@ const meta = seo.fi.gallery;
     <section class="gallery-browse" id="gallery-browse"><div class="container"><div class="section-head"><div><div class="label">Selaa kaikkia</div><h2 class="section-title serif">Näe koko galleria yhdellä silmäyksellä.</h2><p class="lead">Näytetään 20 kuvaa kerrallaan. Avaa kuva suurempana napauttamalla sitä.</p></div></div><div class="gallery-thumb-grid" id="galleryThumbGrid" aria-live="polite"></div><div class="gallery-pagination" id="galleryPagination" aria-label="Gallerian sivutus"><button class="gallery-page-btn" id="galleryPrevPage" type="button" aria-label="Edellinen sivu">‹</button><span class="gallery-page-status" id="galleryPageStatus">Sivu 1</span><button class="gallery-page-btn" id="galleryNextPage" type="button" aria-label="Seuraava sivu">›</button></div></div></section>
     <section class="cta" id="gallery-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Pidätkö näkemästäsi?</h2><p>Varaa yksityinen aikasi ja koe se itse.</p></div><div class="actions"><a class="btn primary" href="../booking/">Varaa aika</a><a class="btn ghost" href="../services/">Katso palvelut</a></div></div></div></section>
   </main>
+  <script is:inline define:vars={{ galleryConfig }}>
+    window.MidoriGallery = galleryConfig;
+  </script>
   <div class="lightbox" id="lightbox"><button class="lightbox-close" type="button" aria-label="Sulje">✕</button><button class="lightbox-nav lightbox-prev" type="button" aria-label="Edellinen kuva">‹</button><div class="lightbox-img" id="lightboxImg"></div><button class="lightbox-nav lightbox-next" type="button" aria-label="Seuraava kuva">›</button></div>
   <Footer lang="fi" />
 </BaseLayout>
