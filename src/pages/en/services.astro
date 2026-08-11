@@ -1,5 +1,6 @@
 ---
 // Approved English Services page port from Notion: EN — Services Page — index.html
+import SeoHead from '../../components/SeoHead.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 ---
@@ -7,12 +8,12 @@ import Footer from '../../components/Footer.astro';
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Services · Midori Beauty | Lash, nail &amp; foot care in Tikkurila</title>
-  <meta name="description" content="Explore lash, nail and foot care services at Midori Beauty — a private, calm home studio in Tikkurila, Vantaa. Pricing and available times are on the Prices page." />
-  <link rel="icon" type="image/png" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="/assets/styles/site.css" />
+  <SeoHead
+    lang="en"
+    title="Services · Midori Beauty | Lash, nail &amp; foot care in Tikkurila"
+    description="Explore lash, nail and foot care services at Midori Beauty — a private, calm home studio in Tikkurila, Vantaa. Pricing and available times are on the Prices page."
+    path="/en/services/"
+  />
 </head>
 <body class="services-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box">
   <Navbar lang="en" current="services" />
