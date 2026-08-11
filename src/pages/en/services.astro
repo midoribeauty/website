@@ -1,21 +1,20 @@
 ---
 // Approved English Services page port from Notion: EN — Services Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box';
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <SeoHead
-    lang="en"
-    title="Services · Midori Beauty | Lash, nail &amp; foot care in Tikkurila"
-    description="Explore lash, nail and foot care services at Midori Beauty — a private, calm home studio in Tikkurila, Vantaa. Pricing and available times are on the Prices page."
-    path="/en/services/"
-  />
-</head>
-<body class="services-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box">
+<BaseLayout
+  lang="en"
+  title="Services · Midori Beauty | Lash, nail &amp; foot care in Tikkurila"
+  description="Explore lash, nail and foot care services at Midori Beauty — a private, calm home studio in Tikkurila, Vantaa. Pricing and available times are on the Prices page."
+  path="/en/services/"
+  bodyClass="services-page"
+  revealSelector={revealSelector}
+>
   <Navbar lang="en" current="services" />
   <main>
     <section class="page-header" id="services-top"><div class="container"><div class="label">Services</div><h1 class="section-title serif">Choose the treatment that fits your day.</h1><p class="lead">Lashes, nails and foot care are kept clear and easy to compare here. Each service has its own pace and purpose, while prices and available times stay updated on the Prices page.</p></div></section>
@@ -26,7 +25,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta" id="services-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Curious what it costs?</h2><p>Every service has clear pricing and availability on the Prices page — no need to ask.</p></div><div class="actions"><a class="btn primary" href="../prices/">View prices</a><a class="btn ghost" href="../booking/">Book now</a></div></div></div></section>
   </main>
   <Footer lang="en" />
-  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>

@@ -1,21 +1,20 @@
 ---
 // Approved Finnish Services page port from Notion: FI — Services Page — index.html
-import SeoHead from '../../components/SeoHead.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box';
 ---
 
-<!doctype html>
-<html lang="fi">
-<head>
-  <SeoHead
-    lang="fi"
-    title="Palvelut · Midori Beauty | Ripset, kynnet ja jalkojenhoito Tikkurilassa"
-    description="Tutustu Midori Beautyn ripsi-, kynsi- ja jalkojenhoitopalveluihin — yksityinen, rauhallinen kotistudio Tikkurilassa, Vantaalla. Hinnat ja vapaat ajat löytyvät Hinnat-sivulta."
-    path="/fi/services/"
-  />
-</head>
-<body class="services-page" data-reveal-selector=".page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box">
+<BaseLayout
+  lang="fi"
+  title="Palvelut · Midori Beauty | Ripset, kynnet ja jalkojenhoito Tikkurilassa"
+  description="Tutustu Midori Beautyn ripsi-, kynsi- ja jalkojenhoitopalveluihin — yksityinen, rauhallinen kotistudio Tikkurilassa, Vantaalla. Hinnat ja vapaat ajat löytyvät Hinnat-sivulta."
+  path="/fi/services/"
+  bodyClass="services-page"
+  revealSelector={revealSelector}
+>
   <Navbar lang="fi" current="services" />
   <main>
     <section class="page-header" id="services-top"><div class="container"><div class="label">Palvelut</div><h1 class="section-title serif">Valitse hoito, joka sopii päivääsi.</h1><p class="lead">Ripset, kynnet ja jalkojenhoito on koottu tänne selkeästi vertailtavaksi. Jokaisella palvelulla on oma rytminsä ja tarkoituksensa, ja hinnat sekä vapaat ajat pysyvät ajan tasalla Hinnat-sivulla.</p></div></section>
@@ -26,7 +25,4 @@ import Footer from '../../components/Footer.astro';
     <section class="cta" id="services-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Kiinnostaako, mitä se maksaa?</h2><p>Jokaisella palvelulla on selkeä hinta ja saatavuus Hinnat-sivulla — ei tarvetta kysyä erikseen.</p></div><div class="actions"><a class="btn primary" href="../prices/">Katso hinnat</a><a class="btn ghost" href="../booking/">Varaa aika</a></div></div></div></section>
   </main>
   <Footer lang="fi" />
-  <button class="back-to-top" type="button" aria-label="Takaisin alkuun">↑</button>
-  <script src="/assets/scripts/site.js" defer></script>
-</body>
-</html>
+</BaseLayout>
