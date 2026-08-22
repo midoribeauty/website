@@ -1,0 +1,44 @@
+---
+import SeoHead from '../components/SeoHead.astro';
+
+export interface Props {
+  lang: 'fi' | 'en';
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  bodyClass?: string;
+  revealSelector?: string;
+  includeGalleryScript?: boolean;
+}
+
+const {
+  lang,
+  title,
+  description,
+  path,
+  image,
+  bodyClass = '',
+  revealSelector,
+  includeGalleryScript = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+<head>
+  <SeoHead
+    lang={lang}
+    title={title}
+    description={description}
+    path={path}
+    image={image}
+  />
+</head>
+<body class={bodyClass} data-reveal-selector={revealSelector}>
+  <slot />
+  <button class="back-to-top" type="button" aria-label={lang === 'fi' ? 'Takaisin alkuun' : 'Back to top'}>↑</button>
+  <script src="/assets/scripts/site.js" defer></script>
+  {includeGalleryScript && <script src="/assets/scripts/gallery.js" defer></script>}
+</body>
+</html>

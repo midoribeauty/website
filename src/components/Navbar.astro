@@ -1,0 +1,58 @@
+---
+// Shared Navbar component — Midori Beauty
+// Extracted in refactor phase 1 from first-pass ported pages (05.08.2026).
+// Navigation labels and route paths now come from src/content/navigation.ts.
+//
+// Usage:
+//   <Navbar lang="fi" current="about" />
+//
+// Props:
+//   lang:    'fi' | 'en'
+//   current: 'home' | 'about' | 'services' | 'gallery' | 'prices' | 'contact' | 'booking'
+//
+// Notes:
+// - Markup/classes/ids preserved from original HTML, so shared site.js keeps
+//   mobile-menu behavior working unchanged.
+// - hrefs are absolute paths (/fi/..., /en/...) — same resolved URLs as the
+//   previous relative ./ and ../ links.
+// - Language switch order stays normalized to FI/EN on all pages.
+// - aria-current="page" is set on the current page link (desktop nav), and on
+//   the booking CTA for booking pages — matching the original behavior.
+
+import { navLabels, navPages, pagePath, type Lang, type NavPageKey } from '../content/navigation';
+
+interface Props {
+	lang: Lang;
+	current: NavPageKey;
+}
+
+const { lang, current } = Astro.props;
+const otherLang = lang === 'fi' ? 'en' : 'fi';
+const t = navLabels[lang];
+---
+
+<header class="nav" id="top">
+	<div class="container nav-inner">
+		<a class="brand" href={pagePath(lang, 'home')} aria-label="Midori Beauty home">
+			<img class="brand-mark" src="/assets/icon-circe.png" alt="Midori Beauty icon" />
+			<span class="brand-name"><strong>Midori</strong><span>Beauty</span></span>
+		</a>
+		<nav class="nav-links" aria-label="Primary navigation">
+			{
+				navPages.map((page) => (
+					<a href={pagePath(lang, page)} aria-current={page === current && current !== 'home' ? 'page' : undefined}>
+						{t[page]}
+					</a>
+				))
+			}
+			<span class="language-switch"><a href={pagePath('fi', current)}>FI</a><span>/</span><a href={pagePath('en', current)}>EN</a></span>
+			<a class="nav-cta" href={pagePath(lang, 'booking')} aria-current={current === 'booking' ? 'page' : undefined}>{t.booking}</a>
+		</nav>
+		<button class="mobile-menu" aria-label="Menu" aria-expanded="false">☰</button>
+		<div class="mobile-panel" id="mobilePanel">
+			{navPages.map((page) => <a href={pagePath(lang, page)}>{t[page]}</a>)}
+			<a href={pagePath(otherLang, current)}>{t.switchName}</a>
+			<a class="nav-cta" href={pagePath(lang, 'booking')}>{t.booking}</a>
+		</div>
+	</div>
+</header>

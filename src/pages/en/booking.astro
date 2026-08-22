@@ -1,0 +1,23 @@
+---
+// Approved English Booking page port from Notion: EN — Booking Page — index.html
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.booking-hero-card,.booking-card,.booking-practical article,.booking-final';
+const meta = seo.en.booking;
+---
+
+<BaseLayout
+  lang="en"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  bodyClass="booking-page"
+  revealSelector={revealSelector}
+>
+  <Navbar lang="en" current="booking" />
+  <main><section class="page-header"><div class="container"><div class="label">Booking</div><h1 class="section-title serif">Your appointment begins with a little care.</h1><p class="lead">A few useful notes before you book your Midori Beauty appointment on Timma.</p></div></section><section class="booking-landing"><div class="container"><div class="booking-hero-card"><div><div class="label">Online booking</div><h2 class="serif">Ready when you are.</h2><p>Choose your preferred service, date and time in Midori Beauty’s secure Timma booking calendar.</p></div><div class="booking-actions"><a class="btn primary" href="https://varaa.timma.fi/midoribeauty" target="_blank" rel="noreferrer"><img src="/assets/icons/booking.svg" alt="" aria-hidden="true">Book on Timma ↗</a><a class="text-link" href="https://timma.fi/yritys/midori-beauty" target="_blank" rel="noreferrer">View Timma profile</a><a class="text-link" href="../prices/">View services &amp; prices</a></div></div><div class="booking-grid"><article class="booking-card"><div class="label">How it works</div><h2 class="serif">Three simple steps.</h2><ol class="booking-steps"><li><span>01</span><div><strong>Choose a service</strong><p>Select the treatment that best suits your visit.</p></div></li><li><span>02</span><div><strong>Find your time</strong><p>Pick a date and time that works for you.</p></div></li><li><span>03</span><div><strong>Confirm on Timma</strong><p>Complete your details directly in the booking calendar.</p></div></li></ol></article><article class="booking-card booking-note"><div class="label">First visit or refill?</div><h2 class="serif">Choose the right appointment.</h2><p>For a first visit, select a new set or treatment. For a refill, please choose the matching refill service and make sure there is enough existing lash or gel work remaining.</p><p>If you are unsure whether to book a refill, removal or a new set, check the price list first or get in touch before booking.</p><div class="booking-links"><a class="text-link" href="../prices/">View prices</a><a class="text-link" href="../contact/">Contact Midori Beauty</a></div></article></div><div class="booking-practical"><article><div class="label">Before you arrive</div><h3 class="serif">A calm, considered visit.</h3><p>Please arrive on time. Midori Beauty is a private home studio in Tikkurila, Vantaa.</p><a class="text-link" href="../contact/">Location &amp; opening hours</a></article><article><div class="label">Changes &amp; cancellations</div><h3 class="serif">Please give 24 hours’ notice.</h3><p>Appointments cancelled or changed with less than 24 hours’ notice may be charged according to the booking policy.</p><a class="text-link" href="../prices/">View booking notes</a></article></div><div class="booking-final"><div><div class="label">Your time, reserved</div><h2 class="serif">Let’s find a moment for you.</h2><p>Timma opens the complete booking calendar with current availability.</p></div><a class="btn primary" href="https://varaa.timma.fi/midoribeauty" target="_blank" rel="noreferrer"><img src="/assets/icons/booking.svg" alt="" aria-hidden="true">Book on Timma ↗</a></div></div></section></main>
+  <Footer lang="en" />
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+// Approved Finnish Services page port from Notion: FI — Services Page — index.html
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box';
+const meta = seo.fi.services;
+---
+
+<BaseLayout
+  lang="fi"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  bodyClass="services-page"
+  revealSelector={revealSelector}
+>
+  <Navbar lang="fi" current="services" />
+  <main>
+    <section class="page-header" id="services-top"><div class="container"><div class="label">Palvelut</div><h1 class="section-title serif">Valitse hoito, joka sopii päivääsi.</h1><p class="lead">Ripset, kynnet ja jalkojenhoito on koottu tänne selkeästi vertailtavaksi. Jokaisella palvelulla on oma rytminsä ja tarkoituksensa, ja hinnat sekä vapaat ajat pysyvät ajan tasalla Hinnat-sivulla.</p></div></section>
+    <section class="service-block" id="lashes"><div class="container service-block-grid"><div class="service-photo lash" aria-hidden="true"></div><div class="service-block-content"><div class="label">Ripset</div><h2 class="section-title serif">Ilmeikkyyttä ilman painoa.</h2><p class="lead">Ripsien muotoilu tehdään oman silmänlinjasi, arkirutiinisi ja toivomasi lopputuloksen mukaan. Kaarevuus, pituus ja tiheys valitaan niin, että katse avautuu ilman raskasta tunnetta, ja lopputulos pysyy pehmeänä, tasapainoisena ja mukavana käyttää.</p><p class="fit-note"><strong>Sopii:</strong> ensikertalaisille, säännöllisille täydennysasiakkaille tai kevyeen sarjaan erityistilaisuuteen.</p><a class="mini-link" href="../prices/#lashes">Katso ripsien hinnat ja vaihtoehdot →</a></div></div></section>
+    <section class="service-block bg-cream reverse" id="nails"><div class="container service-block-grid"><div class="service-photo nail" aria-hidden="true"></div><div class="service-block-content"><div class="label">Kynnet</div><h2 class="section-title serif">Selkeät linjat, hiljainen varmuus.</h2><p class="lead">Kynsipalveluissa keskitytään siistiin valmisteluun, tasapainoiseen muotoon ja arjessa toimivaan viimeistelyyn. Ilme voi olla minimalistinen tai viimeistellympi, mutta perusta on aina sama: huolellinen kynsinauhatyö, siisti rakenne ja terveeltä näyttävät kynnet.</p><p class="fit-note"><strong>Sopii:</strong> säännölliseen käsienhoitoon tai niille, jotka pitävät enemmän minimalistisesta, luonnollisesta kynsi-ilmeestä kuin näyttävästä kynsitaiteesta.</p><a class="mini-link" href="../prices/#nails">Katso kynsien hinnat ja vaihtoehdot →</a></div></div></section>
+    <section class="service-block" id="foot-care"><div class="container service-block-grid"><div class="service-photo care" aria-hidden="true"></div><div class="service-block-content"><div class="label">Jalkojenhoito</div><h2 class="section-title serif">Rauhallinen hetki väsyneille jaloille.</h2><p class="lead">Jalkojenhoito on sekä mukavuutta että siistiä ulkonäköä varten: pehmeämpi iho, huolitellut kynnet ja kevyempi tunne käynnin jälkeen. Hoito on käytännöllinen, yksityiskohtainen ja erityisen hyödyllinen silloin, kun jalat kaipaavat enemmän kuin nopean lakkauksen.</p><p class="fit-note"><strong>Sopii:</strong> paljon jaloillaan olijoille tai kaikille, jotka kaipaavat rauhallisempaa hetkeä arkeen.</p><a class="mini-link" href="../prices/#foot-care">Katso jalkojenhoidon hinnat ja vaihtoehdot →</a></div></div></section>
+    <section class="steps" id="how-it-works"><div class="container"><div class="label">Käynnin kulku</div><h2 class="section-title serif">Palvelun valinnasta viimeisteltyyn lopputulokseen.</h2><p class="lead">Selkeä kulku, jotta tiedät mitä tapahtuu ennen kuin varaat ajan.</p><div class="steps-grid"><div class="point"><div class="n">01</div><div><strong>Varaa Timmassa</strong><span>Valitse palvelu, näe hinta ja poimi sinulle sopiva aika.</span></div></div><div class="point"><div class="n">02</div><div><strong>Rauhallinen, yksityinen tila</strong><span>Saavut tilaan, jossa on vain sinä ja hoitaja — ei odotustilaa, ei kiirettä.</span></div></div><div class="point"><div class="n">03</div><div><strong>Lähde helpolla lopputuloksella</strong><span>Luonnollinen ja siisti tulos, jota on helppo ylläpitää seuraavaan käyntiin asti.</span></div></div></div></div></section>
+    <section class="cta" id="services-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Kiinnostaako, mitä se maksaa?</h2><p>Jokaisella palvelulla on selkeä hinta ja saatavuus Hinnat-sivulla — ei tarvetta kysyä erikseen.</p></div><div class="actions"><a class="btn primary" href="../prices/">Katso hinnat</a><a class="btn ghost" href="../booking/">Varaa aika</a></div></div></div></section>
+  </main>
+  <Footer lang="fi" />
+</BaseLayout>

@@ -1,0 +1,125 @@
+---
+// Shared Footer component — Midori Beauty
+// Extracted in refactor phase 2 from first-pass ported pages (05.08.2026).
+// Content constants moved to src/content/site.ts in Content Data Phase 1.
+
+import { site } from '../content/site';
+
+interface Props {
+	lang: 'fi' | 'en';
+}
+
+const { lang } = Astro.props;
+
+const pagePath = (page: 'home' | 'about' | 'services' | 'gallery' | 'prices' | 'contact') =>
+	page === 'home' ? `/${lang}/` : `/${lang}/${page}/`;
+
+const labels = {
+	fi: {
+		pagesTitle: 'Sivut',
+		home: 'Etusivu',
+		about: 'Esittely',
+		services: 'Palvelut',
+		gallery: 'Galleria',
+		prices: 'Hinnat',
+		contact: 'Yhteys',
+		visitTitle: 'Sijainti & ajanvaraus',
+		book: 'Varaa Timmassa',
+		socialTitle: 'Some',
+	},
+	en: {
+		pagesTitle: 'Pages',
+		home: 'Home',
+		about: 'About',
+		services: 'Services',
+		gallery: 'Gallery',
+		prices: 'Prices',
+		contact: 'Contact',
+		visitTitle: 'Visit & book',
+		book: 'Book on Timma',
+		socialTitle: 'Social',
+	},
+} as const;
+
+const t = labels[lang];
+---
+
+<footer id="footer">
+	<div class="container footer-expanded">
+		<div class="footer-brand">
+			<img class="footer-logo" src={site.assets.logoWordmark} alt={`${site.name} logo`} />
+			<div class="footer-service-line">{site.serviceLine}</div>
+			<p><em>{site.footerTagline}</em></p>
+		</div>
+		<div class="footer-col">
+			<h4>{t.pagesTitle}</h4>
+			<a href={pagePath('home')}>{t.home}</a>
+			<a href={pagePath('about')}>{t.about}</a>
+			<a href={pagePath('services')}>{t.services}</a>
+			<a href={pagePath('gallery')}>{t.gallery}</a>
+			<a href={pagePath('prices')}>{t.prices}</a>
+			<a href={pagePath('contact')}>{t.contact}</a>
+		</div>
+		<div class="footer-col">
+			<h4>{t.visitTitle}</h4>
+			<a href={site.address.mapUrl} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.location} alt="" aria-hidden="true" /></span>{site.address.street}<br />{site.address.postalCode} {site.address.city}</a>
+			<a href={site.contact.phoneHref}><span class="social-icon"><img class="footer-icon" src={site.assets.icons.phone} alt="" aria-hidden="true" /></span>{site.contact.phoneDisplay}</a>
+			<a href={`mailto:${site.contact.email}`}><span class="social-icon"><img class="footer-icon" src={site.assets.icons.email} alt="" aria-hidden="true" /></span>{site.contact.email}</a>
+			<a href={site.links.timmaBooking} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.booking} alt="" aria-hidden="true" /></span>{t.book}</a>
+		</div>
+		<div class="footer-col">
+			<h4>{t.socialTitle}</h4>
+			<a href={site.links.timmaProfile} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.timma} alt="" aria-hidden="true" /></span>Timma</a>
+			<a href={site.links.tiktok} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.tiktok} alt="" aria-hidden="true" /></span>TikTok</a>
+			<a href={site.links.facebook} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.facebook} alt="" aria-hidden="true" /></span>Facebook</a>
+			<a href={site.links.instagram} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.instagram} alt="" aria-hidden="true" /></span>Instagram</a>
+			<a href={site.contact.whatsappUrl} target="_blank" rel="noreferrer"><span class="social-icon"><img class="footer-icon" src={site.assets.icons.whatsapp} alt="" aria-hidden="true" /></span>WhatsApp</a>
+		</div>
+		<div class="footer-bottom footer-signature">
+			<span class="footer-signature-copy">© <span id="year"></span> <a href="/" aria-label="Midori Beauty home">{site.name}</a></span>
+			<span class="footer-signature-credit">Crafted with care by Augustine 🪴</span>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.footer-signature {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 18px;
+		text-align: left;
+		color: rgba(242, 234, 211, .45);
+		font-size: .82rem;
+		line-height: 1.5;
+		letter-spacing: .01em;
+	}
+
+	.footer-signature-copy,
+	.footer-signature-credit {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.footer-signature a {
+		color: inherit;
+		text-decoration: none;
+		transition: color .2s ease, opacity .2s ease, transform .2s ease;
+	}
+
+	.footer-signature a:hover {
+		color: var(--ivory);
+		opacity: .92;
+		transform: translateY(-1px);
+	}
+
+	@media (max-width: 680px) {
+		.footer-signature {
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+			gap: 8px;
+		}
+	}
+</style>

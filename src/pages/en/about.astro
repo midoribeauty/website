@@ -1,0 +1,30 @@
+---
+// Approved English About page port from Notion: EN — About Page — index.html
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.intro-grid,.intro-card,.section-head,.value-card,.about-gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.cta-box';
+const meta = seo.en.about;
+---
+
+<BaseLayout
+  lang="en"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  bodyClass="about-page"
+  revealSelector={revealSelector}
+>
+  <Navbar lang="en" current="about" />
+  <main>
+    <section class="page-header" id="about-top"><div class="container"><div class="label">About</div><h1 class="section-title serif">A small studio with a quieter way of working.</h1><p class="lead">Midori Beauty is a small home studio in Tikkurila, Vantaa, created for clients who prefer a more personal beauty visit. Every appointment is handled directly by the same technician, from the first consultation to the final detail.</p></div></section>
+    <section class="intro" id="founder"><div class="container intro-grid"><div><div class="founder-photo" aria-hidden="true"></div><div class="label">Meet Maria</div><h2 class="section-title serif">One technician, one calendar, one client at a time.</h2><p class="lead">Midori Beauty is cared for by Maria, who welcomes each client personally in her quiet private home studio in Tikkurila.</p><p class="lead">Maria has always been drawn to gentle things: calm rooms, soft colours, warm summer light and small details that make something feel just right. As a wife, mother and beauty technician, she brings that same quiet attention into her work — patient, careful and never rushed.</p><p class="lead">Her style is soft and understated. Natural-looking lashes, clean nails and thoughtful foot care are created to feel polished, comfortable and easy to carry into everyday life.</p></div><aside class="intro-card has-photo"><p class="quote serif">“Quiet water, old rapids, and a five-minute walk to the station.”</p><div class="values"><div class="value"><strong>Tikkurilankoski</strong><span>A quiet riverside landmark close to the studio — a small reminder that central Tikkurila can still feel calm.</span></div><div class="value"><strong>Heureka area</strong><span>A familiar local landmark nearby, making the studio easier to place when planning your visit.</span></div><div class="value"><strong>Tikkurila station</strong><span>Around a five-minute walk from the studio, with easy train and local transport connections.</span></div></div></aside></div></section>
+    <section class="services" id="values"><div class="container"><div class="section-head"><div><div class="label">Values</div><h2 class="section-title serif">What guides every appointment.</h2></div><p class="lead">Six practical principles behind how Midori Beauty is run — from the first booking to the last finishing touch.</p></div><div class="values-grid"><div class="value-card"><strong>Calm attention</strong><span>One client at a time, with space to focus on the details.</span></div><div class="value-card"><strong>Privacy</strong><span>A quiet, closed setting where you can relax without a crowded salon around you.</span></div><div class="value-card"><strong>Careful hygiene</strong><span>Clean tools, careful routines and a considered setup for every appointment.</span></div><div class="value-card"><strong>Consistency</strong><span>The same technician each time, so your preferences can be remembered.</span></div><div class="value-card"><strong>Natural results</strong><span>Soft, wearable beauty that fits into everyday life.</span></div><div class="value-card"><strong>Clear booking</strong><span>Services, prices and available times shown clearly through Timma.</span></div></div></div></section>
+    <section class="about-gallery" id="about-gallery"><div class="container"><div class="about-gallery-grid"><div class="about-gallery-item lash" aria-hidden="true"></div><div class="about-gallery-item nail" aria-hidden="true"></div><div class="about-gallery-item care" aria-hidden="true"></div></div></div></section>
+    <section class="why" id="expect"><div class="container why-grid"><div class="why-art" aria-hidden="true"></div><div><div class="label">What to expect</div><h2 class="section-title serif">A calm visit, from booking to aftercare.</h2><p class="lead">The About page focuses on the studio experience, while detailed service choices and prices stay on the Services and Booking pages.</p><div class="points"><div class="point"><div class="n">01</div><div><strong>Before your visit</strong><span>You choose the service and time in Timma, with clear information before confirming.</span></div></div><div class="point"><div class="n">02</div><div><strong>During your appointment</strong><span>The studio is private and focused, so the appointment can stay calm and personal.</span></div></div><div class="point"><div class="n">03</div><div><strong>After the service</strong><span>The goal is a soft, wearable result that feels easy to return to in everyday life.</span></div></div></div></div></div></section>
+    <section class="cta" id="booking-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Curious what a calmer beauty appointment feels like?</h2><p>Book your private appointment easily online via Midori Beauty's booking page.</p></div><div class="actions"><a class="btn primary" href="../booking/">Book now</a><a class="btn ghost" href="../services/">View services</a></div></div></div></section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

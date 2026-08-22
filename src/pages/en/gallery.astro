@@ -1,0 +1,35 @@
+---
+// Approved English Gallery page port from Notion: EN — Gallery Page — index.html
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
+import { galleryRuntimeConfig } from '../../content/gallery';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.gallery-carousel,.gallery-browse .section-head,.gallery-thumb-grid,.cta-box';
+const meta = seo.en.gallery;
+const galleryConfig = galleryRuntimeConfig('en');
+---
+
+<BaseLayout
+  lang="en"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  bodyClass="gallery-page"
+  revealSelector={revealSelector}
+  includeGalleryScript={true}
+>
+  <Navbar lang="en" current="gallery" />
+  <main>
+    <section class="page-header" id="gallery-top"><div class="container"><div class="label">Gallery</div><h1 class="section-title serif">Results, details, and quiet studio moments.</h1><p class="lead">A visual mood board for Midori Beauty — soft finishes, clean details, and the calm feeling of time reserved just for you.</p></div></section>
+    <section class="gallery-full" id="gallery-grid"><div class="container"><div class="gallery-carousel"><button class="gallery-nav prev" type="button" aria-label="Previous">‹</button><div class="gallery-slider-track" id="galleryTrack" aria-live="polite"></div><button class="gallery-nav next" type="button" aria-label="Next">›</button></div></div></section>
+    <section class="gallery-browse" id="gallery-browse"><div class="container"><div class="section-head"><div><div class="label">Browse all</div><h2 class="section-title serif">See the full gallery at a glance.</h2><p class="lead">Showing 20 photos at a time. Tap any image to open it larger.</p></div></div><div class="gallery-thumb-grid" id="galleryThumbGrid" aria-live="polite"></div><div class="gallery-pagination" id="galleryPagination" aria-label="Gallery pagination"><button class="gallery-page-btn" id="galleryPrevPage" type="button" aria-label="Previous page">‹</button><span class="gallery-page-status" id="galleryPageStatus">Page 1</span><button class="gallery-page-btn" id="galleryNextPage" type="button" aria-label="Next page">›</button></div></div></section>
+    <section class="cta" id="gallery-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Like what you see?</h2><p>Book your private appointment and experience it in person.</p></div><div class="actions"><a class="btn primary" href="../booking/">Book now</a><a class="btn ghost" href="../services/">View services</a></div></div></div></section>
+  </main>
+  <script is:inline define:vars={{ galleryConfig }}>
+    window.MidoriGallery = galleryConfig;
+  </script>
+  <div class="lightbox" id="lightbox"><button class="lightbox-close" type="button" aria-label="Close">✕</button><button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button><div class="lightbox-img" id="lightboxImg"></div><button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button></div>
+  <Footer lang="en" />
+</BaseLayout>

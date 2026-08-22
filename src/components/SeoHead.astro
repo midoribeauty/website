@@ -1,0 +1,33 @@
+---
+export interface Props {
+  lang: 'fi' | 'en';
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+}
+
+const { lang, title, description, path, image } = Astro.props;
+const siteName = 'Midori Beauty';
+const siteUrl = 'https://midoribeauty.fi';
+const canonicalUrl = path ? new URL(path, siteUrl).toString() : undefined;
+const ogImage = image ? new URL(image, siteUrl).toString() : undefined;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>{title}</title>
+<meta name="description" content={description} />
+{canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+{canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+{ogImage && <meta property="og:image" content={ogImage} />}
+<meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={ogImage} />}
+<link rel="icon" type="image/png" href="/assets/favicon.png" />
+<link rel="stylesheet" href="/assets/styles/site.css" />

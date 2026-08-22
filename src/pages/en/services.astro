@@ -1,0 +1,30 @@
+---
+// Approved English Services page port from Notion: EN — Services Page — index.html
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.service-photo,.service-block-content,.steps .label,.steps .section-title,.steps .lead,.point,.cta-box';
+const meta = seo.en.services;
+---
+
+<BaseLayout
+  lang="en"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  bodyClass="services-page"
+  revealSelector={revealSelector}
+>
+  <Navbar lang="en" current="services" />
+  <main>
+    <section class="page-header" id="services-top"><div class="container"><div class="label">Services</div><h1 class="section-title serif">Choose the treatment that fits your day.</h1><p class="lead">Lashes, nails and foot care are kept clear and easy to compare here. Each service has its own pace and purpose, while prices and available times stay updated on the Prices page.</p></div></section>
+    <section class="service-block" id="lashes"><div class="container service-block-grid"><div class="service-photo lash" aria-hidden="true"></div><div class="service-block-content"><div class="label">Lashes</div><h2 class="section-title serif">Definition without the weight.</h2><p class="lead">Lash styling is shaped around your natural eye line, daily routine and preferred finish. Curl, length and density are chosen to open the gaze without making the set feel heavy, so the result stays soft, balanced and comfortable to wear.</p><p class="fit-note"><strong>Best for:</strong> first-time lash clients, regular refills, or a light set for a special occasion.</p><a class="mini-link" href="../prices/#lashes">See lash pricing &amp; options →</a></div></div></section>
+    <section class="service-block bg-cream reverse" id="nails"><div class="container service-block-grid"><div class="service-photo nail" aria-hidden="true"></div><div class="service-block-content"><div class="label">Nails</div><h2 class="section-title serif">Clean lines, quiet confidence.</h2><p class="lead">Nail services focus on clean preparation, balanced shape and a finish that works with everyday hands. The look can stay minimal or more polished, but the base is always the same: careful cuticle work, neat structure and healthy-looking nails.</p><p class="fit-note"><strong>Best for:</strong> regular hand maintenance, or anyone who prefers a minimal, natural nail look over elaborate nail art.</p><a class="mini-link" href="../prices/#nails">See nail pricing &amp; options →</a></div></div></section>
+    <section class="service-block" id="foot-care"><div class="container service-block-grid"><div class="service-photo care" aria-hidden="true"></div><div class="service-block-content"><div class="label">Foot care</div><h2 class="section-title serif">A quiet reset for tired feet.</h2><p class="lead">Foot care is for comfort as much as appearance: softened skin, tidy nails and a lighter feeling after the appointment. The treatment is practical, detailed and especially helpful when your feet need more than a quick polish change.</p><p class="fit-note"><strong>Best for:</strong> anyone on their feet all day, or looking for a slower moment in their schedule.</p><a class="mini-link" href="../prices/#foot-care">See foot care pricing &amp; options →</a></div></div></section>
+    <section class="steps" id="how-it-works"><div class="container"><div class="label">How it works</div><h2 class="section-title serif">From choosing a service to leaving polished.</h2><p class="lead">A simple flow so you know what happens before you book.</p><div class="steps-grid"><div class="point"><div class="n">01</div><div><strong>Book in Timma</strong><span>Choose a service, see the price, and pick a time that suits you.</span></div></div><div class="point"><div class="n">02</div><div><strong>A private, unhurried space</strong><span>Arrive to a space with just you and your therapist — no waiting room, no rush.</span></div></div><div class="point"><div class="n">03</div><div><strong>Leave with an easy result</strong><span>Natural, polished, and simple to maintain until your next visit.</span></div></div></div></div></section>
+    <section class="cta" id="services-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Curious what it costs?</h2><p>Every service has clear pricing and availability on the Prices page — no need to ask.</p></div><div class="actions"><a class="btn primary" href="../prices/">View prices</a><a class="btn ghost" href="../booking/">Book now</a></div></div></div></section>
+  </main>
+  <Footer lang="en" />
+</BaseLayout>

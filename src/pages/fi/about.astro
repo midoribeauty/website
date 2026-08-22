@@ -1,0 +1,30 @@
+---
+// Approved Finnish About page port from Notion: FI — About Page — index.html
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { seo } from '../../content/seo';
+
+const revealSelector = '.page-header .label,.page-header .section-title,.page-header .lead,.intro-grid,.intro-card,.section-head,.value-card,.about-gallery-item,.why-art,.why .label,.why .section-title,.why .lead,.point,.cta-box';
+const meta = seo.fi.about;
+---
+
+<BaseLayout
+  lang="fi"
+  title={meta.title}
+  description={meta.description}
+  path={meta.path}
+  bodyClass="about-page"
+  revealSelector={revealSelector}
+>
+  <Navbar lang="fi" current="about" />
+  <main>
+    <section class="page-header" id="about-top"><div class="container"><div class="label">Esittely</div><h1 class="section-title serif">Pieni studio ja rauhallisempi tapa tehdä työtä.</h1><p class="lead">Midori Beauty on pieni kotistudio Tikkurilassa, Vantaalla, asiakkaille jotka toivovat henkilökohtaisempaa kauneuskäyntiä. Jokainen aika tehdään saman tekijän toimesta, ensimmäisestä keskustelusta viimeiseen viimeistelyyn.</p></div></section>
+    <section class="intro" id="founder"><div class="container intro-grid"><div><div class="founder-photo" aria-hidden="true"></div><div class="label">Tutustu Mariaan</div><h2 class="section-title serif">Yksi tekijä, yksi ajanvarauskalenteri, yksi asiakas kerrallaan.</h2><p class="lead">Midori Beautysta huolehtii Maria, joka ottaa jokaisen asiakkaan vastaan henkilökohtaisesti rauhallisessa yksityisessä kotistudiossaan Tikkurilassa.</p><p class="lead">Mariaa ovat aina puhutelleet lempeät asiat: rauhalliset huoneet, pehmeät sävyt, lämmin kesävalo ja pienet yksityiskohdat, jotka saavat kokonaisuuden tuntumaan oikealta. Vaimona, äitinä ja kauneusalan tekijänä hän tuo samaa hiljaista huolellisuutta myös työhönsä — kärsivällisesti, tarkasti ja ilman kiirettä.</p><p class="lead">Hänen tyylinsä on pehmeä ja hillitty. Luonnolliset ripset, siistit kynnet ja ajatuksella tehty jalkojenhoito saavat tuntua viimeistellyiltä, mukavilta ja helpoilta arjessa.</p></div><aside class="intro-card has-photo"><p class="quote serif">“Hiljaista vettä, vanhoja koskia ja viiden minuutin kävelymatka asemalle.”</p><div class="values"><div class="value"><strong>Tikkurilankoski</strong><span>Rauhallinen jokimaisema studion lähellä — pieni muistutus siitä, että keskellä Tikkurilaa voi silti olla levollista.</span></div><div class="value"><strong>Heurekan alue</strong><span>Tuttu paikallinen maamerkki lähellä, joka helpottaa studion sijainnin hahmottamista.</span></div><div class="value"><strong>Tikkurilan asema</strong><span>Noin viiden minuutin kävelymatkan päässä studiosta, hyvien juna- ja paikallisliikenneyhteyksien varrella.</span></div></div></aside></div></section>
+    <section class="services" id="values"><div class="container"><div class="section-head"><div><div class="label">Arvot</div><h2 class="section-title serif">Mikä ohjaa jokaista käyntiä.</h2></div><p class="lead">Kuusi käytännöllistä periaatetta, jotka ohjaavat Midori Beautyn toimintaa — ensimmäisestä varauksesta viimeiseen viimeistelyyn.</p></div><div class="values-grid"><div class="value-card"><strong>Rauhallinen huomio</strong><span>Yksi asiakas kerrallaan ja tilaa keskittyä yksityiskohtiin.</span></div><div class="value-card"><strong>Yksityisyys</strong><span>Rauhallinen suljettu tila, jossa voit rentoutua ilman vilkasta salongin tuntua.</span></div><div class="value-card"><strong>Huolellinen hygienia</strong><span>Puhtaat välineet, tarkat rutiinit ja harkittu työskentely jokaisella käynnillä.</span></div><div class="value-card"><strong>Johdonmukaisuus</strong><span>Sama tekijä joka kerta, jotta toiveesi voidaan muistaa.</span></div><div class="value-card"><strong>Luonnollinen lopputulos</strong><span>Pehmeää, arkeen sopivaa kauneutta.</span></div><div class="value-card"><strong>Selkeä ajanvaraus</strong><span>Palvelut, hinnat ja vapaat ajat selkeästi Timmassa.</span></div></div></div></section>
+    <section class="about-gallery" id="about-gallery"><div class="container"><div class="about-gallery-grid"><div class="about-gallery-item lash" aria-hidden="true"></div><div class="about-gallery-item nail" aria-hidden="true"></div><div class="about-gallery-item care" aria-hidden="true"></div></div></div></section>
+    <section class="why" id="expect"><div class="container why-grid"><div class="why-art" aria-hidden="true"></div><div><div class="label">Käynnin kulku</div><h2 class="section-title serif">Rauhallinen käynti varauksesta jälkihoitoon.</h2><p class="lead">Esittely-sivu keskittyy studion kokemukseen, kun taas tarkemmat palvelut ja hinnat löytyvät Palvelut- ja Ajanvaraus-sivuilta.</p><div class="points"><div class="point"><div class="n">01</div><div><strong>Ennen käyntiä</strong><span>Valitset palvelun ja ajan Timmassa, selkeillä tiedoilla ennen vahvistamista.</span></div></div><div class="point"><div class="n">02</div><div><strong>Käynnin aikana</strong><span>Studio on yksityinen ja rauhallinen, jotta käynti voi pysyä henkilökohtaisena.</span></div></div><div class="point"><div class="n">03</div><div><strong>Hoidon jälkeen</strong><span>Tavoitteena on pehmeä, arkeen sopiva lopputulos, johon on helppo palata.</span></div></div></div></div></div></section>
+    <section class="cta" id="booking-cta"><div class="container"><div class="cta-box"><div><h2 class="serif">Kiinnostaako, miltä rauhallisempi kauneuskäynti tuntuu?</h2><p>Varaa yksityinen aikasi helposti verkossa Midori Beautyn ajanvaraussivulla.</p></div><div class="actions"><a class="btn primary" href="../booking/">Varaa aika</a><a class="btn ghost" href="../services/">Katso palvelut</a></div></div></div></section>
+  </main>
+  <Footer lang="fi" />
+</BaseLayout>
