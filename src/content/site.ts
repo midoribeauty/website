@@ -10,7 +10,7 @@ export const site = {
 		city: 'Vantaa',
 		area: 'Tikkurila',
 		floor: '5th floor',
-		mapUrl: 'https://maps.google.com/?q=Neilikkatie%204C%2043,%2001300%20Vantaa',
+		mapUrl: 'https://maps.app.goo.gl/HNQA1oWikfVxQ3jx7',
 		mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d247.17538397149832!2d25.038336366254658!3d60.28986518201155!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469207e96850bfeb%3A0x21c237ad94d588a9!2sMidori%20Beauty!5e0!3m2!1svi!2sfi!4v1793751909423!5m2!1svi!2sfi',
 	},
 	contact: {
